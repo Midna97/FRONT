@@ -9,7 +9,7 @@
 
 @if ($tipo == 'Administrador')
     <h1>Bienvenido a tu Dashboard </h1>
-    
+
 @else
     <h1>Bienvenido</h1>
     @endif
@@ -19,10 +19,12 @@
     @include('partials.card')
     @include('partials.card')
     <div id="menu">
-    
+
     </div>
     <script src="{{asset('js/home.js')}}">
 
     </script>
+
+
 @endsection
 

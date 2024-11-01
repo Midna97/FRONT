@@ -14,7 +14,7 @@ class CategoriesController extends Controller
     public function __construct(){
         $this->client=new Client(['base_uri'=>'http://localhost:8001/api/']);
     }
-    
+
     public function consulta(){
             $valida=$this->client->request('GET','category',[ 'headers' => [
                 'Accept' => 'application/json',
@@ -22,5 +22,10 @@ class CategoriesController extends Controller
             ],]);
         $response=$valida->getBody();
         return $response;
+    }
+
+    public function pages(Request $request){
+        $idcategory=$request->query('category');
+        return view('alimentos',['idcategory'=>$idcategory]);
     }
 }

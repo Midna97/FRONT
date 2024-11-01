@@ -11,4 +11,5 @@ Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/categories', [CategoriesController::class, 'consulta'])->name('categories');
-Route::get('/alimentos', function () { return view('alimentos'); })->name('alimentos');
+Route::get('/alimentos',[CategoriesController::class,'pages'])->name('alimentos');
+
